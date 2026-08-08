@@ -39,5 +39,6 @@ Project type: ${data.get('project')}
 Project details:
 ${data.get('message') || ''}`
   );
-  window.location.href = `mailto:trisnerconstruction@gmail.com?subject=${subject}&body=${body}`;
+  const mailto = `mailto:trisnerconstruction@gmail.com?subject=${subject}&body=${body}`;
+  window.location.href = mailto;
 });
