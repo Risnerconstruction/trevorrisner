@@ -1,59 +1,251 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Risner Construction | Custom Homes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box} html{scroll-behavior:smooth} body{background:#070707;color:#f4efe7;font-family:'Inter',sans-serif} a{color:inherit;text-decoration:none} input,select,textarea,button{font-family:inherit}
-    header{position:fixed;top:0;width:100%;z-index:10;padding:20px 7%;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(0,0,0,.92),rgba(0,0,0,.18))}.logo{display:block;padding:10px 14px;background:rgba(0,0,0,.56);border:1px solid rgba(255,255,255,.12);box-shadow:0 14px 35px rgba(0,0,0,.35);backdrop-filter:blur(8px)}.logo img{width:190px;max-width:42vw;display:block}nav{display:flex;gap:34px;font-size:12px;letter-spacing:2px;text-transform:uppercase}nav a:hover{color:#2548ff}.socials{display:flex;gap:22px;align-items:center;color:#f4efe7;font-size:17px}
-    .hero{min-height:100vh;padding:178px 7% 90px;display:flex;align-items:center;background:linear-gradient(90deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.62) 43%,rgba(0,0,0,.22) 100%),url('hero-home.jpg');background-size:cover;background-position:center right}.hero-content{max-width:680px}.eyebrow{color:#b9915b;text-transform:uppercase;letter-spacing:4px;font-size:12px;margin-bottom:22px}h1{font-family:'Cormorant Garamond',serif;font-size:clamp(56px,8vw,92px);line-height:.9;font-weight:500;margin-bottom:26px}.blue-dot{color:#2548ff}.hero p{color:#d9d3ca;font-size:18px;line-height:1.8;max-width:585px;margin-bottom:38px}.motto{font-family:'Cormorant Garamond',serif;font-size:26px;color:#f4efe7;margin-bottom:18px}.buttons{display:flex;gap:22px;align-items:center;flex-wrap:wrap}.btn{display:inline-block;border:0;cursor:pointer;padding:17px 30px;background:#2548ff;color:white;text-transform:uppercase;font-size:12px;letter-spacing:2px;font-weight:700}.btn:hover{background:#1730ba}.btn.secondary{background:transparent;border:1px solid rgba(244,239,231,.38);color:#f4efe7}.btn.secondary:hover{background:rgba(255,255,255,.08)}.quote-actions{grid-column:1/-1;display:flex;gap:14px;flex-wrap:wrap}.text-link{text-transform:uppercase;font-size:12px;letter-spacing:2px;border-bottom:1px solid #f4efe7;padding-bottom:8px}
-    section{padding:90px 7%}.section-label{color:#b9915b;text-transform:uppercase;letter-spacing:4px;font-size:12px;margin-bottom:18px}.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,5vw,62px);line-height:1;font-weight:500;margin-bottom:42px}.projects-head{display:flex;justify-content:space-between;align-items:end;gap:30px}.project-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.right-stack{display:grid;gap:18px}.project{position:relative;min-height:520px;background-size:cover;background-position:center;display:flex;align-items:end;overflow:hidden}.project.small{min-height:251px}.project::after,.craft-card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.08))}.project-info{position:relative;z-index:1;padding:24px;width:100%;background:linear-gradient(to top,rgba(0,0,0,.7),transparent)}.project-info h3{font-size:15px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}.project-info p{color:#b9915b;text-transform:uppercase;font-size:12px;letter-spacing:2px}
-    .craft{background:#0d0d0d}.craft-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:26px;align-items:stretch}.craft-copy{padding:38px;border:1px solid rgba(255,255,255,.08);background:#111}.craft-copy p{color:#cfc7bd;line-height:1.85;margin-bottom:18px}.craft-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.craft-card{position:relative;min-height:340px;background-size:cover;background-position:center;display:flex;align-items:end;overflow:hidden}.craft-card.tall{min-height:700px}.craft-card span{position:relative;z-index:1;padding:22px;font-size:15px;text-transform:uppercase;letter-spacing:1.5px}
-    .process{background:linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.84)),url('timber-build.jpg');background-size:cover;background-position:center;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}.process-grid{display:grid;grid-template-columns:1.1fr repeat(4,1fr);border-left:1px solid rgba(255,255,255,.12)}.process-intro,.step{padding:34px;border-right:1px solid rgba(255,255,255,.12)}.step-number{font-family:'Cormorant Garamond',serif;font-size:46px;color:#b9915b;margin-bottom:22px}.step h4{text-transform:uppercase;letter-spacing:1.5px;font-size:14px;margin-bottom:12px}.step p{color:#cfc7bd;font-size:14px;line-height:1.7}
-    .quote{background:#101010}.quote-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:start}.quote-intro{position:sticky;top:120px}.quote-intro p{color:#cfc7bd;line-height:1.8}.quote-form{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:30px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.035)}.field.full{grid-column:1/-1}label{display:block;color:#b9915b;text-transform:uppercase;font-size:11px;letter-spacing:2px;margin-bottom:9px}input,select,textarea{width:100%;background:#080808;border:1px solid rgba(255,255,255,.12);color:#f4efe7;padding:15px 14px;font-size:15px;outline:none}textarea{min-height:130px;resize:vertical}input:focus,select:focus,textarea:focus{border-color:#2548ff}.form-note{grid-column:1/-1;color:#9d968e;font-size:13px;line-height:1.6}
-    .cta{display:grid;grid-template-columns:1fr 1fr auto;gap:42px;align-items:center;background:#101010;border-bottom:1px solid rgba(255,255,255,.08)}.cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,56px);line-height:1;font-weight:500}.cta p{color:#d3ccc2;line-height:1.7;border-left:1px solid rgba(255,255,255,.18);padding-left:34px}footer{padding:36px 7%;display:flex;justify-content:space-between;gap:24px;align-items:center;color:#b9b1a7;font-size:13px}footer img{width:120px}.footer-links{display:flex;gap:28px;text-transform:uppercase;letter-spacing:1.5px;font-size:12px}
-    @media(max-width:900px){header{padding:16px 24px}.logo img{width:155px}nav,.socials{display:none}.hero{background:linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.78)),url('hero-home.jpg');background-size:cover;background-position:center}.project-grid,.process-grid,.cta,.craft-layout,.quote-wrap{grid-template-columns:1fr}.craft-grid{grid-template-columns:1fr}.project,.project.small,.craft-card,.craft-card.tall{min-height:360px}.quote-intro{position:static}.quote-form{grid-template-columns:1fr;padding:22px}.cta p{border-left:0;padding-left:0}footer{flex-direction:column;align-items:flex-start}}
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Risner Construction | Custom Home Builder in Northeast Wisconsin</title>
+  <meta name="description" content="Risner Construction builds custom homes, barndominiums, garages, shops, additions, and renovations throughout Northeast Wisconsin. Founded in 2022. Licensed and insured.">
+  <meta name="theme-color" content="#111820">
+  <link rel="canonical" href="https://trevorrisner.com/">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preload" as="image" href="hero.webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Risner Construction | Northeast Wisconsin">
+  <meta property="og:description" content="Custom homes built with precision and designed to endure.">
+  <meta property="og:url" content="https://trevorrisner.com/">
+  <meta property="og:image" content="https://trevorrisner.com/hero.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"GeneralContractor",
+    "name":"Risner Construction",
+    "url":"https://trevorrisner.com/",
+    "telephone":"+1-920-518-0999",
+    "email":"trisnerconstruction@gmail.com",
+    "foundingDate":"2022",
+    "areaServed":"Northeast Wisconsin",
+    "description":"Custom home builder serving Northeast Wisconsin.",
+    "sameAs":["https://www.instagram.com/risnerconstruction/"]
+  }
+  </script>
 </head>
 <body>
-<header><a class="logo" href="#"><img src="logo.png" alt="Risner Construction Logo"></a><nav><a href="#">Home</a><a href="#work">Our Work</a><a href="#craft">Craft</a><a href="#process">Process</a><a href="#quote">Start Your Build</a></nav><div class="socials"><a href="https://www.instagram.com/risnerconstruction" target="_blank">◎</a><a href="https://www.facebook.com/share/1CaB8A3nBZ/?mibextid=wwXIfr" target="_blank">f</a></div></header>
-<section class="hero"><div class="hero-content"><div class="eyebrow">Wisconsin Custom Home Builder</div><h1>Custom Homes<br>Built With<br>Integrity<span class="blue-dot">.</span></h1><div class="motto">Made to stand on the land you love.</div><p>From concept to completion, Risner Construction builds custom homes and barndominiums with unmatched craftsmanship, honest communication, and attention to detail.</p><div class="buttons"><a class="btn" href="#quote">Start Your Build</a><a class="text-link" href="#work">View Our Work</a></div></div></section>
-<section id="work"><div class="projects-head"><div><div class="section-label">Featured Projects</div><h2 class="section-title">Built to Last.<br>Designed to Inspire.</h2></div><a class="text-link" href="https://www.instagram.com/risnerconstruction" target="_blank">View All Projects</a></div><div class="project-grid"><div class="project" style="background-image:url('project-progress.jpg')"><div class="project-info"><h3>Modern Custom Home</h3><p>In Progress →</p></div></div><div class="right-stack"><div class="project small" style="background-image:url('barndominium-progress.jpg')"><div class="project-info"><h3>Barndominium Build</h3><p>In Progress →</p></div></div><div class="project small" style="background-image:url('shop-build.jpg')"><div class="project-info"><h3>Custom Shop Build</h3><p>Completed →</p></div></div></div></div></section>
-<section class="craft" id="craft"><div class="craft-layout"><div class="craft-copy"><div class="section-label">The Craft</div><h2 class="section-title">Built From<br>The Inside Out.</h2><p>The details you never see are the ones that matter most. Framing, structure, planning, and site execution all shape the way a home lives for generations.</p><p>Risner Construction brings the grit of real building work together with the sharp finish of a custom home experience.</p><a class="text-link" href="#quote">Start a Conversation</a></div><div class="craft-grid"><div class="craft-card tall" style="background-image:url('craft-fireplace.jpg')"><span>Framing With a View</span></div><div class="right-stack"><div class="craft-card" style="background-image:url('staircase-framing.jpg')"><span>Structural Detail</span></div><div class="craft-card" style="background-image:url('barndominium-progress.jpg')"><span>Barndominiums & Shops</span></div></div></div></div></section>
-<section class="process" id="process"><div class="process-grid"><div class="process-intro"><div class="section-label">Our Process</div><h2 class="section-title">A Proven Process.<br>Quality Results.</h2></div><div class="step"><div class="step-number">01</div><h4>Consult</h4><p>We listen, plan, and align on your vision.</p></div><div class="step"><div class="step-number">02</div><h4>Design</h4><p>Custom plans, selections, and detailed planning.</p></div><div class="step"><div class="step-number">03</div><h4>Build</h4><p>Expert craftsmanship and clear communication.</p></div><div class="step"><div class="step-number">04</div><h4>Deliver</h4><p>Final walkthrough and a home built to last.</p></div></div></section>
-<section class="quote" id="quote"><div class="quote-wrap"><div class="quote-intro"><div class="section-label">Start Your Build</div><h2 class="section-title">Tell Us About<br>Your Vision.</h2><p>Answer a few questions and Risner Construction will follow up to talk through your project, land, timeline, and next steps.</p></div><form class="quote-form" id="quoteForm"><div class="field"><label for="name">Name</label><input id="name" name="Name" required></div><div class="field"><label for="phone">Phone</label><input id="phone" name="Phone" required></div><div class="field"><label for="email">Email</label><input id="email" name="Email" type="email"></div><div class="field"><label for="location">Project Location</label><input id="location" name="Project Location"></div><div class="field"><label for="type">What are you building?</label><select id="type" name="Project Type"><option>Custom Home</option><option>Barndominium</option><option>Shop / Garage</option><option>Addition or Remodel</option><option>Not sure yet</option></select></div><div class="field"><label for="land">Do you own land?</label><select id="land" name="Land Status"><option>Yes</option><option>Currently looking</option><option>Need guidance</option></select></div><div class="field"><label for="budget">Estimated investment</label><select id="budget" name="Budget"><option>Still planning</option><option>$250k–$500k</option><option>$500k–$750k</option><option>$750k+</option></select></div><div class="field"><label for="timeline">Timeline</label><select id="timeline" name="Timeline"><option>Ready to start</option><option>3–6 months</option><option>6–12 months</option><option>Planning phase</option></select></div><div class="field full"><label for="vision">Tell us about your vision</label><textarea id="vision" name="Vision" placeholder="Style, size, land details, inspiration, must-haves..."></textarea></div><div class="quote-actions"><button class="btn" type="submit">Send With Gmail</button><button class="btn secondary" type="button" id="emailAppBtn">Open Email App</button></div><div class="form-note">Choose Gmail or your default email app. Either option opens a pre-filled message to trisnerconstruction@gmail.com with the project details.</div></form></div></section>
-<section class="cta" id="contact"><h2>Ready to Build<br>Something Exceptional?</h2><p>Made to stand on the land you love. Call or email to start the conversation.</p><a class="btn" href="tel:9205180999">Call Now</a></section>
-<footer><img src="logo.png" alt="Risner Construction Logo"><a href="tel:9205180999">(920) 518-0999</a><a href="mailto:trisnerconstruction@gmail.com">trisnerconstruction@gmail.com</a><div class="footer-links"><a href="https://www.instagram.com/risnerconstruction" target="_blank">Instagram</a><a href="https://www.facebook.com/share/1CaB8A3nBZ/?mibextid=wwXIfr" target="_blank">Facebook</a></div></footer>
-<script>
-  function buildInquiryMessage() {
-    const form = document.getElementById('quoteForm');
-    const data = new FormData(form);
-    let body = 'New Risner Construction project inquiry:
+<a class="skip-link" href="#main">Skip to content</a>
 
-';
-    for (const [key, value] of data.entries()) {
-      body += key + ': ' + (value || '') + '
-';
-    }
-    return {
-      subject: 'New Project Inquiry',
-      body
-    };
-  }
+<header class="site-header" id="top">
+  <a class="brand" href="#top" aria-label="Risner Construction home">
+    <img src="logo.png" width="1000" height="328" alt="Risner Construction">
+  </a>
 
-  document.getElementById('quoteForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    const message = buildInquiryMessage();
-    const gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=trisnerconstruction@gmail.com&su=' + encodeURIComponent(message.subject) + '&body=' + encodeURIComponent(message.body);
-    window.open(gmailUrl, '_blank');
-  });
+  <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+    <span></span><span></span>
+  </button>
 
-  document.getElementById('emailAppBtn').addEventListener('click', function(){
-    const message = buildInquiryMessage();
-    window.location.href = 'mailto:trisnerconstruction@gmail.com?subject=' + encodeURIComponent(message.subject) + '&body=' + encodeURIComponent(message.body);
-  });
-</script>
+  <nav class="site-nav" id="site-nav" aria-label="Primary">
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#builder">About</a>
+    <a href="#contact">Contact</a>
+    <a class="nav-cta" href="#contact">Start a Project</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <img class="hero-media" src="hero.webp" alt="Custom residence by Risner Construction" fetchpriority="high">
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="eyebrow light">Custom homes · Northeast Wisconsin</p>
+      <h1 id="hero-title">Built with precision.<br>Designed to endure.</h1>
+      <p class="hero-copy">Custom homes, barndominiums, garages, shops, and additions managed with clear communication from first plan to final walkthrough.</p>
+      <div class="actions">
+        <a class="button button-light" href="#work">View Our Work</a>
+        <a class="button button-dark-on-hero" href="#contact">Start a Project</a>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#intro" aria-label="Scroll to next section"><span></span>Scroll</a>
+  </section>
+
+  <section class="intro section" id="intro">
+    <div class="section-label">Risner Construction</div>
+    <div class="intro-grid">
+      <h2>A straightforward approach to exceptional building.</h2>
+      <div>
+        <p class="lead">Founded in 2022, Risner Construction serves Northeast Wisconsin with custom residential building rooted in planning, accountability, and workmanship that holds up long after the project is complete.</p>
+        <div class="proof-grid" aria-label="Company facts">
+          <div><strong>2022</strong><span>Founded</span></div>
+          <div><strong>Licensed</strong><span>Wisconsin</span></div>
+          <div><strong>Insured</strong><span>For confidence</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="work section section-muted" id="work">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Selected work</p>
+        <h2>Projects that speak for themselves.</h2>
+      </div>
+      <p>Real projects. Real progress. A portfolio built around the work—not stock photography.</p>
+    </div>
+
+    <div class="project-grid">
+      <article class="project project-featured reveal">
+        <div class="project-image"><img src="project-fox-river.webp" loading="lazy" alt="Fox River Residence custom home"></div>
+        <div class="project-meta dark">
+          <div>
+            <h3>Fox River Residence</h3>
+            <p>Custom home · Fox River</p>
+          </div>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </div>
+      </article>
+
+      <div class="project-stack">
+        <article class="project reveal">
+          <div class="project-image"><img src="project-hillside.webp" loading="lazy" alt="Large custom home under construction"></div>
+          <div class="project-meta">
+            <div><h3>Hillside Custom Home</h3><p>Custom home · In progress</p></div>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project-image"><img src="project-shop.webp" loading="lazy" alt="White and black detached garage and shop"></div>
+          <div class="project-meta">
+            <div><h3>Garage &amp; Shop</h3><p>Purpose-built space</p></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="standard" aria-labelledby="standard-title">
+    <div class="standard-copy">
+      <p class="eyebrow light">The standard</p>
+      <h2 id="standard-title">The details matter because the whole does.</h2>
+      <p>Structure, alignment, proportion, and finish are handled with the same discipline. The goal is simple: build it correctly, communicate clearly, and leave behind work that lasts.</p>
+      <ol class="principles">
+        <li><span>01</span>Clear planning</li>
+        <li><span>02</span>Consistent communication</li>
+        <li><span>03</span>No shortcuts</li>
+      </ol>
+    </div>
+    <div class="standard-image">
+      <img src="craft.webp" loading="lazy" alt="Framed interior with fireplace and large window opening">
+    </div>
+  </section>
+
+  <section class="services section" id="services">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">What we build</p>
+        <h2>From first sketch to finished space.</h2>
+      </div>
+      <p>One builder, one clear process, and the flexibility to take on the projects that matter most to your property.</p>
+    </div>
+
+    <div class="service-list">
+      <article><span>01</span><h3>Custom Homes</h3><p>Ground-up homes planned around your site, your priorities, and the way you live.</p></article>
+      <article><span>02</span><h3>Barndominiums</h3><p>Highly functional, highly personal spaces without sacrificing finish quality.</p></article>
+      <article><span>03</span><h3>Garages &amp; Shops</h3><p>Purpose-built work and storage spaces designed to perform for years.</p></article>
+      <article><span>04</span><h3>Additions &amp; Renovations</h3><p>Thoughtful expansion and remodeling that respects the structure already there.</p></article>
+      <article><span>05</span><h3>General Contracting</h3><p>Coordination, scheduling, subcontractor management, and accountability from start to finish.</p></article>
+    </div>
+  </section>
+
+  <section class="land-band reveal" aria-label="Aerial view of Northeast Wisconsin property">
+    <img src="land.webp" loading="lazy" alt="Aerial view of a Northeast Wisconsin property">
+    <div>
+      <p class="eyebrow light">Northeast Wisconsin</p>
+      <h2>Built for where you are.</h2>
+      <p>From waterfront lots to rural acreage and established neighborhoods, every project starts by understanding the site in front of us.</p>
+    </div>
+  </section>
+
+  <section class="builder section" id="builder">
+    <div class="builder-photo reveal"><img src="trevor.webp" loading="lazy" alt="Trevor Risner, founder of Risner Construction"></div>
+    <div class="builder-copy">
+      <p class="eyebrow">The builder</p>
+      <h2>Trevor Risner</h2>
+      <p class="lead">Trevor founded Risner Construction in 2022 after building hands-on experience in residential construction. He stays closely involved in every project—from planning and coordination to the work happening on site.</p>
+      <p>The approach is intentionally simple: be clear, be accountable, and build it the right way.</p>
+      <a class="text-link" href="#contact">Talk with Trevor <span>↗</span></a>
+    </div>
+  </section>
+
+  <section class="process section section-muted">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">The process</p>
+        <h2>Clear from the beginning.</h2>
+      </div>
+      <p>A custom build has a lot of moving parts. The process should still feel understandable.</p>
+    </div>
+    <div class="process-grid">
+      <article><span>01</span><h3>Conversation</h3><p>We start with the property, project scope, priorities, and what success looks like for you.</p></article>
+      <article><span>02</span><h3>Plan</h3><p>We align drawings, selections, budget expectations, schedule, and trade coordination.</p></article>
+      <article><span>03</span><h3>Build</h3><p>The work moves forward with hands-on oversight and clear communication throughout.</p></article>
+      <article><span>04</span><h3>Finish</h3><p>We walk the project carefully and close it out with the same attention we started with.</p></article>
+    </div>
+  </section>
+
+  <section class="contact section" id="contact">
+    <div class="contact-intro">
+      <p class="eyebrow">Start a project</p>
+      <h2>Let’s talk about what you’re building.</h2>
+      <p>Tell us enough to start the conversation. We’ll take it from there.</p>
+      <div class="contact-direct">
+        <a href="tel:+19205180999">(920) 518-0999</a>
+        <a href="mailto:trisnerconstruction@gmail.com">trisnerconstruction@gmail.com</a>
+        <span>Serving Northeast Wisconsin</span>
+      </div>
+    </div>
+
+    <form class="contact-form" id="project-form">
+      <label>Name<input name="name" autocomplete="name" required></label>
+      <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
+      <label>Project type
+        <select name="project">
+          <option>Custom Home</option>
+          <option>Barndominium</option>
+          <option>Garage / Shop</option>
+          <option>Addition / Renovation</option>
+          <option>General Contracting</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label>Tell us a little about it<textarea name="message" rows="4"></textarea></label>
+      <button class="button button-submit" type="submit">Send Project Details</button>
+      <p class="form-note">This opens your email app with the project details filled in—no information is stored on this website.</p>
+    </form>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-brand">
+    <img src="logo.png" alt="Risner Construction">
+    <p>Built to last on the land you love.</p>
+  </div>
+  <div>
+    <p class="footer-label">Contact</p>
+    <a href="tel:+19205180999">(920) 518-0999</a>
+    <a href="mailto:trisnerconstruction@gmail.com">trisnerconstruction@gmail.com</a>
+  </div>
+  <div>
+    <p class="footer-label">Follow</p>
+    <a href="https://www.instagram.com/risnerconstruction/" target="_blank" rel="noopener">Instagram ↗</a>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> Risner Construction</span>
+    <span>Licensed &amp; insured · Northeast Wisconsin</span>
+  </div>
+</footer>
+
+<a class="mobile-call" href="tel:+19205180999">Call Trevor</a>
+
+<script src="script.js" defer></script>
 </body>
 </html>

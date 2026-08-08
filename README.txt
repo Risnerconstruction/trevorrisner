@@ -1,11 +1,29 @@
-Risner Construction Website
+RISNER CONSTRUCTION — LAUNCH PACKAGE
 
-Open index.html to preview the site.
+Upload EVERY file in this folder to the root of the GitHub repository.
+There are intentionally NO subfolders to make browser uploading easy.
 
-Quote form: visitors can choose Send With Gmail or Open Email App. Both options create a pre-filled email addressed to trisnerconstruction@gmail.com.
+Required files:
+- index.html
+- styles.css
+- script.js
+- logo.png
+- favicon.png
+- all .webp images
+- robots.txt
+- sitemap.xml
 
-Images are stored in the assets folder.
+Cloudflare:
+- Root directory: /
+- Build command: leave blank
+- Deploy command: npx wrangler deploy (for your existing Workers setup)
 
-Contact:
-Phone: (920) 518-0999
-Email: trisnerconstruction@gmail.com
+Business details included:
+- Risner Construction
+- Founded 2022
+- Northeast Wisconsin
+- (920) 518-0999
+- trisnerconstruction@gmail.com
+- Instagram: @risnerconstruction
+
+The contact form opens the visitor's email app with their project details prefilled.
