@@ -45,6 +45,7 @@
 
   <nav class="site-nav" id="site-nav" aria-label="Primary">
     <a href="#work">Work</a>
+    <a href="#gallery">Gallery</a>
     <a href="#services">Services</a>
     <a href="#builder">About</a>
     <a href="#contact">Contact</a>
@@ -122,17 +123,26 @@
     </div>
   </section>
 
-  <section class="gallery section" aria-labelledby="gallery-title">
-    <div class="section-heading"><div><p class="eyebrow">More from the field</p><h2 id="gallery-title">Built in the details.</h2></div><p>A closer look at finished work, framing, shops, custom homes, and the process behind them.</p></div>
+  <section class="gallery section" id="gallery" aria-labelledby="gallery-title">
+    <div class="section-heading">
+      <div><p class="eyebrow">Gallery</p><h2 id="gallery-title">The work, start to finish.</h2></div>
+      <p>Finished spaces, active builds, framing, shops, and the details behind the finished result.</p>
+    </div>
     <div class="gallery-grid">
-      <figure class="gallery-wide"><img src="gallery-aframe-front.webp" loading="lazy" alt="Finished A-frame custom build"></figure>
-      <figure><img src="gallery-screened-porch.webp" loading="lazy" alt="Custom screened porch exterior"></figure>
-      <figure><img src="gallery-roof-ridge.webp" loading="lazy" alt="Roof construction in progress"></figure>
-      <figure><img src="gallery-barndo-finished.webp" loading="lazy" alt="Finished barndominium exterior"></figure>
-      <figure><img src="gallery-treehouse.webp" loading="lazy" alt="Elevated custom woodland structure"></figure>
-      <figure class="gallery-wide"><img src="gallery-foundation-sunset.webp" loading="lazy" alt="Custom home foundation at sunset"></figure>
-      <figure><img src="gallery-shop-interior.webp" loading="lazy" alt="Finished shop interior"></figure>
-      <figure><img src="gallery-aframe-detail.webp" loading="lazy" alt="A-frame exterior detail"></figure>
+      <figure class="gallery-wide"><button class="gallery-open" type="button" aria-label="Open image"><img src="gallery-aframe-front.webp" loading="lazy" alt="Finished A-frame custom build"></button></figure>
+      <figure><button class="gallery-open" type="button" aria-label="Open image"><img src="gallery-aframe-detail.webp" loading="lazy" alt="A-frame exterior detail and glazing"></button></figure>
+      <figure><button class="gallery-open" type="button" aria-label="Open image"><img src="gallery-barndo-finished.webp" loading="lazy" alt="Finished barndominium exterior"></button></figure>
+      <figure class="gallery-tall"><button class="gallery-open" type="button" aria-label="Open image"><img src="gallery-barndo.webp" loading="lazy" alt="Barndominium exterior by Risner Construction"></button></figure>
+      <figure><button class="gallery-open" type="button" aria-label="Open image"><img src="gallery-custom-home-progress.webp" loading="lazy" alt="Custom home construction progress"></button></figure>
+      <figure class="gallery-wide"><button class="gallery-open" type="button" aria-label="Open image"><img src="gallery-foundation-sunset.webp" loading="lazy" alt="Custom home foundation at sunset"></button></figure>
+      <figure><button class="gallery-open" type="button" aria-label="Open image"><img src="gallery-home-roof.webp" loading="lazy" alt="Custom home roof construction"></button></figure>
+      <figure><button class="gallery-open" type="button" aria-label="Open image"><img src="gallery-porch-interior.webp" loading="lazy" alt="Finished screened porch interior"></button></figure>
+      <figure class="gallery-tall"><button class="gallery-open" type="button" aria-label="Open image"><img src="gallery-roof-framing.webp" loading="lazy" alt="Roof framing craftsmanship"></button></figure>
+      <figure><button class="gallery-open" type="button" aria-label="Open image"><img src="gallery-roof-ridge.webp" loading="lazy" alt="Roof ridge construction in progress"></button></figure>
+      <figure class="gallery-wide"><button class="gallery-open" type="button" aria-label="Open image"><img src="gallery-screened-porch.webp" loading="lazy" alt="Custom screened porch exterior"></button></figure>
+      <figure><button class="gallery-open" type="button" aria-label="Open image"><img src="gallery-shop-interior.webp" loading="lazy" alt="Finished shop interior"></button></figure>
+      <figure><button class="gallery-open" type="button" aria-label="Open image"><img src="gallery-shop-lean-to.webp" loading="lazy" alt="Shop lean-to exterior"></button></figure>
+      <figure class="gallery-tall"><button class="gallery-open" type="button" aria-label="Open image"><img src="gallery-treehouse.webp" loading="lazy" alt="Elevated custom woodland structure"></button></figure>
     </div>
   </section>
 
@@ -227,11 +237,18 @@
       </div>
     </div>
 
-    <form class="contact-form" id="project-form">
+    <form class="contact-form" id="project-form" novalidate>
+      <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="_subject" value="New project inquiry from trevorrisner.com">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+
       <label>Name<input name="name" autocomplete="name" required></label>
       <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
+      <label>Email <span class="optional">(optional)</span><input name="email" type="email" autocomplete="email"></label>
       <label>Project type
-        <select name="project">
+        <select name="project" required>
+          <option value="">Select one</option>
           <option>Custom Home</option>
           <option>Barndominium</option>
           <option>Garage / Shop</option>
@@ -239,12 +256,30 @@
           <option>Other</option>
         </select>
       </label>
-      <label>Tell us a little about it<textarea name="message" rows="4"></textarea></label>
-      <button class="button button-submit" type="submit">Send Project Details</button>
-      <p class="form-note">This opens your email app with the project details filled in—no information is stored on this website.</p>
+      <label class="form-message-label">Tell us a little about it<textarea name="message" rows="4" required></textarea></label>
+
+      <button class="button button-submit" type="submit">
+        <span class="submit-label">Send Project Details</span>
+      </button>
+      <p class="form-note">Your project details are sent securely to Risner Construction.</p>
+
+      <div class="form-status form-success" role="status" aria-live="polite" hidden>
+        <strong>Thanks — we received your project details.</strong>
+        <span>Trevor will be in touch.</span>
+      </div>
+      <div class="form-status form-error" role="alert" hidden>
+        <strong>Something didn’t send.</strong>
+        <span>Please call <a href="tel:+19205180999">(920) 518-0999</a> or try again.</span>
+      </div>
     </form>
   </section>
 </main>
+
+<div class="gallery-lightbox" id="gallery-lightbox" aria-hidden="true" role="dialog" aria-label="Gallery image">
+  <button class="gallery-close" type="button" aria-label="Close image">×</button>
+  <img src="" alt="">
+</div>
+
 
 <footer class="site-footer">
   <div class="footer-brand">

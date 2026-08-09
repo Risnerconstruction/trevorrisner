@@ -14,3 +14,13 @@ Includes:
 - Direct Leave a Google Review link
 - Expanded, optimized real-project photo gallery
 - Existing email-app project inquiry behavior preserved
+
+FINAL GALLERY UPDATE:
+- Gallery link added to main navigation
+- All gallery images included
+- Images open full-screen when tapped/clicked
+
+DIRECT CONTACT FORM:
+The Project Details form now submits directly from the website to trisnerconstruction@gmail.com.
+IMPORTANT: After the first test submission, FormSubmit sends a one-time activation email to that Gmail address.
+Open that email and click "Activate Form". After activation, normal website submissions are delivered directly.
